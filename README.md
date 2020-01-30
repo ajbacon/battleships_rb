@@ -3,6 +3,15 @@ Features
   fire a shot at the grid and miss
   fire a shot at the board and hit
   fire multiple shots to sink a ship
+  .
+  .
+  .
+  .
+  some form of intelligence for computer after computer hits a ship
+  
+
+
+
 
 
 
@@ -12,7 +21,8 @@ Features
   minimum ship size is 2 cells
   ships cannot overlap
   ships can be side by side
-  both players have the same
+  both players have the same pieces
+  ships cannot be placed diagonally
 
 
 
@@ -64,13 +74,7 @@ As a player
 So that I can play against a human opponent
 I would like to play a two-player game
 ```
-0 0 S 
-0 0 X
-0 - 0
 
-- S S 
-- - -
-- - -
 
 Empty grid
 ```
@@ -120,7 +124,7 @@ Miss a ship
 - - S S S - - - - - - - - 
 - - - - - - - - - - - - - 
 - - - - - - - - - - - - - 
-- - - - - - - 0 - - - - - 
+- - - - - - - O - - - - - 
 - - - - - - - - - - - - - 
 - - - - - - - - - - - - - 
 - - - - - - - - - - - - - 
