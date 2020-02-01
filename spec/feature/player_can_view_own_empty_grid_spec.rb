@@ -7,6 +7,6 @@ describe "player can place a ship" do
     game.start
   
     expectation = 10.times {'- - - - - - - - - -\n'}
-    expect { game.player1.show_grid }.to output(expectation)
+    expect { game.show_grid }.to output(expectation)
   end
 end
