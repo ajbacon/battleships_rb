@@ -1,10 +1,12 @@
 require 'battleships'
+require 'print_grid'
+require 'grid'
 
 describe "player can place a ship" do
   
-  xit "should show an empty grid for player 1" do
+  it "should show an empty grid for player 1" do
     game = Battleships.new
-    game.start
+    
   
     expected = "   A  B  C  D  E  F  G  H  I  J\n"
     expected += "1  -  -  -  -  -  -  -  -  -  -\n"
@@ -18,6 +20,6 @@ describe "player can place a ship" do
     expected += "9  -  -  -  -  -  -  -  -  -  -\n"
     expected += "10 -  -  -  -  -  -  -  -  -  -\n"
 
-    expect { game.show_grid }.to output(expectation).to_stdout
+    expect { game.start }.to output(expected).to_stdout
   end
 end
