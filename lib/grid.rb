@@ -1,9 +1,12 @@
 class Grid
   
-  attr_reader :grid
 
   def initialize
     @grid = Array.new(10, Array.new(10, "-"))
+  end
+
+  def get_grid
+    @grid
   end
 
 

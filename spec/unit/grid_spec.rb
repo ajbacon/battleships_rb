@@ -7,6 +7,6 @@ RSpec.describe Grid do
     expectation = []
     10.times { expectation.push(["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"]) }
 
-    expect(subject.grid).to eq(expectation)
+    expect(subject.get_grid).to eq(expectation)
   end
 end
