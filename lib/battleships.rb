@@ -10,8 +10,9 @@ class Battleships
     @grid = grid
   end
 
-  def start(input = $stdin)
+  def start(input = $stdin, ship_locator = ShipLocator.new)
     @printer.render_grid(@grid)
     @printer.render_instructions
+    ship_locator.place_ships(@grid)
   end
 end

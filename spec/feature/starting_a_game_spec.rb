@@ -1,8 +1,11 @@
 require 'battleships'
 require 'printer'
 require 'grid'
+require 'ship_locator'
 
 describe "empty grid is displayed on new games spec" do
+
+  let(:ship_locator) { double :ship_locator, place_ships: nil}
   
   it "should show an empty grid when game is started" do
     game = Battleships.new
@@ -19,7 +22,7 @@ describe "empty grid is displayed on new games spec" do
     expected += "9  -  -  -  -  -  -  -  -  -  -\n"
     expected += "10 -  -  -  -  -  -  -  -  -  -\n"
 
-    expect { game.start }.to output(/#{Regexp.quote(expected)}/).to_stdout
+    expect { game.start($stdin, ship_locator) }.to output(/#{Regexp.quote(expected)}/).to_stdout
   end
 
   it "should print the instructions for placing ships" do
@@ -39,7 +42,7 @@ describe "empty grid is displayed on new games spec" do
     expected += "  - Ships can be adjacent to each other\n"
     expected += "  - Ships cannot be placed diagonally\n"
 
-    expect { game.start }.to output(/#{Regexp.quote(expected)}/).to_stdout
+    expect { game.start($stdin, ship_locator) }.to output(/#{Regexp.quote(expected)}/).to_stdout
   end
 
   it "should prompt the user to press enter to continue" do
@@ -47,7 +50,7 @@ describe "empty grid is displayed on new games spec" do
     
     expected = "Press [enter] to continue...\n"
 
-    expect { game.start }.to output(/#{Regexp.quote(expected)}/).to_stdout
+    expect { game.start($stdin, ship_locator) }.to output(/#{Regexp.quote(expected)}/).to_stdout
   end
 
   # prompt the user for ship coordinates of the ship location

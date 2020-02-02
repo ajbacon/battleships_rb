@@ -1,12 +1,13 @@
 require 'battleships'
 require 'printer'
 require 'grid'
+require 'ship_locator'
 
 describe "player can place a ship" do
 
   let(:game) {Battleships.new}
 
-  it "should prompt the user to enter ship coordinates" do
+  xit "should prompt the user to enter ship coordinates" do
     io = StringIO.new("\n")
     game = Battleships.new
     game.start(io)
