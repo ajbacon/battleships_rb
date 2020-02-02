@@ -40,9 +40,17 @@ RSpec.describe Printer do
       expected += "  - Ships cannot extend over the grid boundary\n"
       expected += "  - Ships cannot overlap\n"
       expected += "  - Ships can be adjacent to each other\n"
-      expected += "  - Ships cannot be placed diagonally\n"
+      expected += "  - Ships cannot be placed diagonally\n\n"
   
-      expect{ subject.render_instructions }.to output(expected).to_stdout
+      expect{ subject.render_instructions }.to output(/#{Regexp.quote(expected)}/).to_stdout
+    end
+  end
+
+  describe "render_instructions" do
+    it "should prompt the player to hit enter to continue" do
+
+      expected = "Press [enter] to continue...\n"
+      expect{ subject.render_instructions }.to output(/#{Regexp.quote(expected)}/).to_stdout
     end
   end
 end

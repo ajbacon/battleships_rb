@@ -42,6 +42,14 @@ describe "empty grid is displayed on new games spec" do
     expect { game.start }.to output(/#{Regexp.quote(expected)}/).to_stdout
   end
 
+  it "should prompt the user to press enter to continue" do
+    game = Battleships.new
+    
+    expected = "Press [enter] to continue...\n"
+
+    expect { game.start }.to output(/#{Regexp.quote(expected)}/).to_stdout
+  end
+
   # prompt the user for ship coordinates of the ship location
 
 end

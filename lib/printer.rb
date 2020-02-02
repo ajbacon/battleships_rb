@@ -25,5 +25,7 @@ class Printer
     puts "  - Ships cannot overlap"
     puts "  - Ships can be adjacent to each other"
     puts "  - Ships cannot be placed diagonally"
+    puts
+    puts "Press [enter] to continue..."
   end
 end

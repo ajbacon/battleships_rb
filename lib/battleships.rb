@@ -10,7 +10,7 @@ class Battleships
     @grid = grid
   end
 
-  def start
+  def start(input = $stdin)
     @printer.render_grid(@grid)
     @printer.render_instructions
   end

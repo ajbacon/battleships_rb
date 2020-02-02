@@ -15,9 +15,17 @@ RSpec.describe Battleships do
       subject.start
     end
 
-    it "should print the instructions for placing ships" do
+    it "should call the printer method printing placing ship instructions" do
       allow(printer).to receive(:render_grid).with(grid)
       expect(printer).to receive(:render_instructions)
+
+      subject.start
+    end
+
+    it "should call method to begin placing ships" do
+      allow(printer).to receive(:render_grid).with(grid)
+      allow(printer).to receive(:render_instructions)
+      expect( ship_loctator ).to receive(:place_ships)
 
       subject.start
     end
